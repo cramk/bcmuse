@@ -1,4 +1,5 @@
 const Koa = require("koa");
+const serve = require("koa-static");
 const cors = require("@koa/cors");
 const body = require("koa-json-body");
 const app = new Koa();
@@ -6,6 +7,7 @@ const run_service__TRACK = require("./track_url_service");
 const run_service__ALBUM = require("./album_url_service");
 const determine_service_type = require("./service_classifier");
 app.use(cors());
+app.use(serve("../web/dist"));
 app.use(body({ limit: "10kb", fallback: true }));
 app.use(async (ctx) => {
   console.log(ctx.request.body);

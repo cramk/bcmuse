@@ -3,6 +3,9 @@ const ALB_RE = new RegExp("^https://.*amp.com.*/album/.*", "g");
 const TR_RE = new RegExp("^https://.*amp.com.*/track/.*", "g");
 
 const determine_service_type = (url) => {
+  const DISC_RE = new RegExp("^https://.*amp.com.*/music", "g");
+  const ALB_RE = new RegExp("^https://.*amp.com.*/album/.*", "g");
+  const TR_RE = new RegExp("^https://.*amp.com.*/track/.*", "g");
   url = url.trim();
   let outType = -1;
   outType = TR_RE.test(url) ? 0 : -1;
