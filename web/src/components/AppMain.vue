@@ -20,7 +20,7 @@ defineProps({
   msg: String
 })
 
- const state = reactive({ count: 0,url:'' })
+ const state = reactive({ url:'' })
 
  const closeBasic = ()=>{
   state.showDialog = false
@@ -42,7 +42,7 @@ const submit = async ()=>{
 /* 	const media_stream = await axios.get(url_req_res.data.url); */
 	axios.get(url_req_res.data.url, {params: {}, responseType: 'blob'})
     .then((res) => {
-			console.log("GOT BLOB",res)
+			
 			console.log("Saving")
 			saveAs(res.data,`${url_req_res.data.title}.mp3`)
         //...
