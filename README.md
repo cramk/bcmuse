@@ -13,5 +13,8 @@ CORS header overwrite (browser plugin OR proxy) will be required to trigger the 
 
 Checkout http://equal-ticket.surge.sh/ for a demo (requires localhost + cors to actually use)
 
+**Single tracks for now**
+**Disco/Alb implementation TBD**
+
 
 This is puppeteer based but a usable PoC.
