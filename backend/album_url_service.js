@@ -18,17 +18,7 @@ let run_service = (valIn, outVal) => {
     });
     try {
       let dlPage = await browser.newPage();
-      /*     dlPage.on('console', msg => console.log(msg.text())); */
-      await dlPage.exposeFunction(
-        "fetchStream",
-        async (streamPath, streamName, savePath) => {
-          return new Promise((resolve, reject) => {
-            var out = fs.createWriteStream(`${savePath}//${streamName}.mp3`);
-            new fetch.FetchStream(streamPath).pipe(out);
-            resolve(true);
-          });
-        }
-      );
+   
 
       await dlPage.goto(useURL, { waitUntil: "networkidle2" });
 
