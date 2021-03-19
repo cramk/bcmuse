@@ -7,7 +7,7 @@ let outVal = {};
 let run_service = (valIn, outVal) => {
   return (async (val, outValObj) => {
     let outObj = {};
-    console.log("INPUT VAL", val);
+ 
     const useURL = val;
     if (!validateURL(useURL)) {
       return false;
@@ -28,9 +28,7 @@ let run_service = (valIn, outVal) => {
         () => document.querySelector(`.trackTitle`)?.innerText ?? false
       );
 
-      console.log("Found title for ", titleText);
-      // console.log("Working on", streamSel, titleText);
-
+   
       function replaceAll(str, find, replace) {
         return str.replace(new RegExp(find, "g"), replace);
       }
@@ -42,9 +40,8 @@ let run_service = (valIn, outVal) => {
       titleText = replaceAll(titleText, "\n", "-");
       titleText = replaceAll(titleText, ",", "-");
       titleText = replaceAll(titleText, "&", "-");
-
       titleText = replaceAll(titleText, ":", "-");
-
+        
       titleText = titleText.split("*").join("-");
       titleText = titleText.split("/").join("-");
       titleText = titleText.split("?").join("-");
@@ -61,9 +58,9 @@ let run_service = (valIn, outVal) => {
           respStr = response.url();
 
           let obj = { url: response.url(), title: titleText };
-          outValObj = obj;
+   
           outObj = obj;
-          console.log("Have Obj", outObj);
+          console.log("DL Obj", outObj);
 
           return true;
         } else {
