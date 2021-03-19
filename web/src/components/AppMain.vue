@@ -32,14 +32,9 @@ defineProps({
 }
 const submit = async ()=>{
 	console.log("Getting URL for",state.url)
-
 	const url_req_res = await axios.post('http://localhost:9000', { url: state.url });
-
 	console.log("Got URL",url_req_res.data.url)
 
-
-
-/* 	const media_stream = await axios.get(url_req_res.data.url); */
 	axios.get(url_req_res.data.url, {params: {}, responseType: 'blob'})
     .then((res) => {
 			
